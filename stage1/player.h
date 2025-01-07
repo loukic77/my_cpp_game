@@ -10,7 +10,7 @@ class Player :public GameObject,public Box {
 	const float m_gravity = 10.0f;
 	const float m_accel_vertical = 6.0f;
 	const float m_accel_horizontal = 40.0f;
-	const float m_max_velocity = 10.0f;
+	const float m_max_velocity = 16.0f;
 
 	void movePlayer(float dt);
 	

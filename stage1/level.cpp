@@ -264,7 +264,7 @@ void Level::draw()
 	float offset_y = m_state->m_global_offset_y/4.0f + h / 2.0f;
 
 	//draw background
-	graphics::drawRect(3.0f, 3.0f,w,h*1.0f,m_brush_background);
+	graphics::drawRect(offset_x, offset_y,w*1.3f,h*1.3f,m_brush_background);
 
 	if (m_state->getPlayer()->is_active()) {
 		m_state->getPlayer()->draw();
