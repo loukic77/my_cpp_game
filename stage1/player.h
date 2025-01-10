@@ -11,6 +11,7 @@ class Player :public GameObject,public Box {
 	const float m_accel_vertical = 6.0f;
 	const float m_accel_horizontal = 20.0f;
 	const float m_max_velocity = 6.0f;
+	int lifes_remaining = 3;
 
 	void movePlayer(float dt);
 	
@@ -22,4 +23,6 @@ public:
 	void  draw() override;
 	void  init() override;
 	void debugDraw();
+	int get_lifes_remaining() { return lifes_remaining; };
+	void set_lifes_remaining(int lifes) { lifes_remaining = lifes; };
 };

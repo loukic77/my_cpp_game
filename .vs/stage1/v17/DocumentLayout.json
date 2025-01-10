@@ -11,64 +11,16 @@
       "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\explosionPiece.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\explosionPiece.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\explosionPiece.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\explosionPiece.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\laser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\laser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\Obstacle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\Obstacle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\Spring.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\Spring.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\Alien.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\Alien.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\gamestate.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\gamestate.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\laser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\Alien.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\Alien.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\gamestate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\gamestate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11189E46-B121-4666-AF95-B7CC4BE7FBBB}|stage1\\stage1.vcxproj|solutionrelative:stage1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,144 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "laser.cpp",
-              "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\laser.cpp",
-              "RelativeDocumentMoniker": "stage1\\laser.cpp",
-              "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\laser.cpp",
-              "RelativeToolTip": "stage1\\laser.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-28T17:09:31.757Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "laser.h",
-              "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\laser.h",
-              "RelativeDocumentMoniker": "stage1\\laser.h",
-              "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\laser.h",
-              "RelativeToolTip": "stage1\\laser.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-28T17:04:29.929Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "box.h",
-              "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\box.h",
-              "RelativeDocumentMoniker": "stage1\\box.h",
-              "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\box.h",
-              "RelativeToolTip": "stage1\\box.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-26T17:37:34.912Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Spring.h",
-              "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\Spring.h",
-              "RelativeDocumentMoniker": "stage1\\Spring.h",
-              "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\Spring.h",
-              "RelativeToolTip": "stage1\\Spring.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-10T09:57:20.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "timer.h",
-              "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\timer.h",
-              "RelativeDocumentMoniker": "stage1\\timer.h",
-              "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\timer.h",
-              "RelativeToolTip": "stage1\\timer.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-10T09:57:16.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "explosionPiece.h",
-              "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\explosionPiece.h",
-              "RelativeDocumentMoniker": "stage1\\explosionPiece.h",
-              "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\explosionPiece.h",
-              "RelativeToolTip": "stage1\\explosionPiece.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-10T09:27:02.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "explosionPiece.cpp",
-              "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\explosionPiece.cpp",
-              "RelativeDocumentMoniker": "stage1\\explosionPiece.cpp",
-              "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\explosionPiece.cpp",
-              "RelativeToolTip": "stage1\\explosionPiece.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-10T09:07:05.597Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Alien.cpp",
-              "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\Alien.cpp",
-              "RelativeDocumentMoniker": "stage1\\Alien.cpp",
-              "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\Alien.cpp",
-              "RelativeToolTip": "stage1\\Alien.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-09T11:57:34.911Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "player.cpp",
-              "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\player.cpp",
-              "RelativeDocumentMoniker": "stage1\\player.cpp",
-              "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\player.cpp",
-              "RelativeToolTip": "stage1\\player.cpp",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-08T17:03:21.781Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Alien.h",
-              "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\Alien.h",
-              "RelativeDocumentMoniker": "stage1\\Alien.h",
-              "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\Alien.h",
-              "RelativeToolTip": "stage1\\Alien.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-07T10:35:35.456Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -225,22 +44,9 @@
               "RelativeDocumentMoniker": "stage1\\level.h",
               "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\level.h",
               "RelativeToolTip": "stage1\\level.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAswCoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-26T17:34:13.171Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Obstacle.h",
-              "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\Obstacle.h",
-              "RelativeDocumentMoniker": "stage1\\Obstacle.h",
-              "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\Obstacle.h",
-              "RelativeToolTip": "stage1\\Obstacle.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-08T10:49:00.994Z",
               "EditorCaption": ""
             },
             {
@@ -251,40 +57,27 @@
               "RelativeDocumentMoniker": "stage1\\level.cpp",
               "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\level.cpp",
               "RelativeToolTip": "stage1\\level.cpp",
-              "ViewState": "AgIAAOwAAAAAAAAAAAD4vxoBAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAJYBAAAAAAAAAAAAAJwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-26T17:44:27.102Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "player.h",
               "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\player.h",
               "RelativeDocumentMoniker": "stage1\\player.h",
               "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\player.h",
               "RelativeToolTip": "stage1\\player.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-26T15:31:16.873Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "gamestate.h",
-              "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\gamestate.h",
-              "RelativeDocumentMoniker": "stage1\\gamestate.h",
-              "ToolTip": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\gamestate.h",
-              "RelativeToolTip": "stage1\\gamestate.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-26T10:09:06.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 4,
               "Title": "gamestate.cpp",
               "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\gamestate.cpp",
               "RelativeDocumentMoniker": "stage1\\gamestate.cpp",
@@ -292,11 +85,12 @@
               "RelativeToolTip": "stage1\\gamestate.cpp",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-26T09:55:51.852Z"
+              "WhenOpened": "2024-12-26T09:55:51.852Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 3,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\louki\\OneDrive\\\u03A5\u03C0\u03BF\u03BB\u03BF\u03B3\u03B9\u03C3\u03C4\u03AE\u03C2\\game\\stage1\\stage1\\main.cpp",
               "RelativeDocumentMoniker": "stage1\\main.cpp",
@@ -304,7 +98,8 @@
               "RelativeToolTip": "stage1\\main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-26T09:55:46.373Z"
+              "WhenOpened": "2024-12-26T09:55:46.373Z",
+              "EditorCaption": ""
             }
           ]
         }

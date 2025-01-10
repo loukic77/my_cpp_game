@@ -14,6 +14,8 @@
 
 class Level :public GameObject,public Box {
 	graphics::Brush m_brush_background;
+	graphics::Brush m_brush_heart;
+	graphics::Brush m_highscore_text_brush;
 	float m_center_x = 5.0f;	
 	float m_center_y = 5.0f;
 
@@ -38,6 +40,7 @@ class Level :public GameObject,public Box {
 	void drawBlock(int i);
 	std::vector<Obstacle> obstacles;
 	const float alien_shoot_cooldown = 0.8f;
+	int score;
 	
 
 	vector<Obstacle> createObstacles();

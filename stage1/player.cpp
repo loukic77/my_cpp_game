@@ -84,16 +84,16 @@ void Player::init()
 	m_pos_x = m_state->getCanvasWidth() / 2.0f;
 	m_pos_y = 7.0f;
 	//m_width = m_width / 2.0f;
-	m_width = m_width / 2.2f;
+	m_width = m_width / 2.4f;
 
-	m_height = m_height / 1.5f;
+	m_height = m_height / 2.0f;
 
 	m_state->m_global_offset_x = m_state->getCanvasWidth() / 2.0f - m_pos_x;
 	m_state->m_global_offset_y = m_state->getCanvasHeight() / 2.0f - m_pos_y;
 
 	m_brush_player.fill_opacity = 1.0f;
 	m_brush_player.outline_opacity = 0.0f;
-	m_brush_player.texture = m_state->getFullAssetPath("Space-Invaders-ship.png");
+	m_brush_player.texture = m_state->getFullAssetPath("space-invaders-ship2.png");
 
 	
 
@@ -106,14 +106,14 @@ void Player::debugDraw() {
 
 	SETCOLOR(player_debug_brush.fill_color, 0.9f, 0.78f, 0.2f);
 	SETCOLOR(player_debug_brush.outline_color, 0.7f, 0.6f, 0.5f);
-	graphics::drawRect(m_pos_x + m_state->m_global_offset_x,
-		m_pos_y + m_state->m_global_offset_y,
+	graphics::drawRect(m_pos_x ,
+		m_pos_y,
 		m_width, m_height, player_debug_brush);
 }
 void Player::draw()
 {
 	
-	graphics::drawRect(m_pos_x, m_pos_y, 1.0f, 1.0f, m_brush_player);
+	graphics::drawRect(m_pos_x, m_pos_y, 0.4f, 0.4f, m_brush_player);
 
 	if (m_state->m_debugging)
 		debugDraw();

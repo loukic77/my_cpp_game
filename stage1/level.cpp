@@ -110,6 +110,7 @@ void Level::checkCollisions(float dt)
 		for (int i = 0; i < m_blocks.size();) {
 			if (box1.intersect(m_blocks[i]) && new_laser->get_laser_direction() == 1.0f) {
 
+				score += 1;
 				new_laser->setActive(false);
 				explosionPiece piece1 = explosionPiece(m_blocks[i].m_pos_x - m_blocks[i].m_width / 2.0f, m_blocks[i].m_pos_y, m_blocks[i].m_height, m_blocks[i].m_width / 2.0f, "right");
 				explosion_pieces.push_back(piece1);
@@ -124,13 +125,15 @@ void Level::checkCollisions(float dt)
 				m_block_names.erase(m_block_names.begin() + i);
 			}
 			else { i++; }
-
+		}
+		if (new_laser->is_active()) {
 			for (auto& obstacle : obstacles) {
 				for (int i = 0; i < obstacle.blocks.size();) {
-					if (box1.intersect(obstacle.blocks[i]) && abs(obstacle.blocks[i].m_pos_x - box1.m_pos_x) < 0.04f) { //second condition is for the laser to not hit two blocks at the same time
+					if (box1.intersect(obstacle.blocks[i]) && abs(obstacle.blocks[i].m_pos_x - box1.m_pos_x) < 0.04f && abs(obstacle.blocks[i].m_pos_y - box1.m_pos_y)<0.03f) { //second condition is for the laser to not hit two blocks at the same time
 
-						obstacle.blocks.erase(obstacle.blocks.begin() + i);
+
 						new_laser->setActive(false);
+						obstacle.blocks.erase(obstacle.blocks.begin() + i);
 						break;
 					}
 					else {
@@ -140,8 +143,11 @@ void Level::checkCollisions(float dt)
 			}
 		}
 		
-		
-				
+		if (new_laser->get_laser_direction() == -1 && m_state->getPlayer()->intersect(box1) && new_laser->is_active() && abs(m_state->getPlayer()->m_pos_x - box1.m_pos_x) < 0.08f && abs(m_state->getPlayer()->m_pos_y - box1.m_pos_y) < 0.04f) {      //checking if a laser hits the target(it has to not hit another box earlier too)
+			m_state->getPlayer()->set_lifes_remaining(m_state->getPlayer()->get_lifes_remaining() - 1);
+			std::cout <<"lifes left: "<< m_state->getPlayer()->get_lifes_remaining() << endl;
+			new_laser->setActive(false);
+		}
 				//m_laser_objects.remove(laser);
 			
 		
@@ -270,12 +276,28 @@ void Level::update(float dt)
 	}
 
 	for (auto& piece : explosion_pieces) {
-		//if (!(piece)->is_active()) {     //is_active xrhsimpoieitai klhronomika apo GameObject
-			 // Delete the laser
-		//	it = m_laser_objects.erase(it);  // Remove from list and update iterator
-		//}
 		piece.move_explosion_piece(dt);
+		//if (!(&piece)->is_active()) {     //is_active xrhsimpoieitai klhronomika apo GameObject
+			 // Delete the laser
+			//explosion_pieces.erase(&piece);  // Remove from list and update iterator
+		//}
 	}
+	//auto name_it = explosion_pieces_names.begin();  // Iterator for names
+	//for (auto piece = explosion_pieces.begin(); piece != explosion_pieces.end();) {
+	//	if (!piece->is_active()) {
+	//		piece = explosion_pieces.erase(piece);               // Erase piece
+	//		name_it = explosion_pieces_names.erase(name_it);     // Erase corresponding name
+	//	}
+	//	else {
+	//		piece->move_explosion_piece(dt);                     // Move the explosion piece
+	//		++piece;
+	//		++name_it;
+	//	}
+	//	
+	//}
+		
+
+		
 
 	static int frame_count = 0;
 	static float last_time = graphics::getGlobalTime() / 1000.0f;
@@ -366,6 +388,14 @@ void Level::draw()
 	//draw background
 	graphics::drawRect(offset_x, offset_y,w*1.3f,h*1.3f,m_brush_background);
 
+	float j = 5.75;
+	for (int i = 0; i <	m_state->getPlayer()->get_lifes_remaining(); i++) {
+		graphics::drawRect(j, 0.3f,0.3f, 0.3f, m_brush_heart);
+		j = j-0.29f;
+	}
+	string score_text = "Score = " + std::to_string(score);
+	graphics::drawText(0.1f, 0.3f, 0.2f,score_text,m_highscore_text_brush);
+
 	if (m_state->getPlayer()->is_active()) {
 		m_state->getPlayer()->draw();
 	}
@@ -403,6 +433,10 @@ Level::Level(const std::string& name)
 {
 	m_brush_background.outline_opacity = 0.0f;
 	m_brush_background.texture = m_state->getFullAssetPath("1349325.png");
+
+	m_brush_heart.outline_opacity = 0.0f;
+	m_brush_heart.texture = m_state->getFullAssetPath("heart.png");
+	graphics::setFont("OpenSans-Bold.ttf");
 }
 
 Level::~Level()
