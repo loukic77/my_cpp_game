@@ -6,12 +6,12 @@ C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\Spring.h(27,24
 C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\Spring.h(38,19): warning C4101: 'dir_x': unreferenced local variable
   (compiling source file 'level.cpp')
   
-C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(24,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(24,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(26,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(26,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(240,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(241,37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(294,105): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(294,85): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(28,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(28,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(30,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(30,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(338,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(339,37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(395,105): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\level.cpp(395,85): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   stage1.vcxproj -> C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\bin\stage1.exe

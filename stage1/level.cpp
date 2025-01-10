@@ -6,9 +6,13 @@
 #include "timer.h"
 #include "Spring.h"
 #include "explosionPiece.h"
+#include "Obstacle.h"
+
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <cstdlib>
+
 using std::cout;
 #define SETCOLOR(c,r,g,b){c[0] =r,c[1]=g,c[2]= b;}
 
@@ -24,8 +28,23 @@ void Level::drawBlock(int i)
 	graphics::drawRect(x ,y,0.3*m_block_size,0.3*m_block_size,m_block_brush);
 	if (m_state->m_debugging) {
 		graphics::drawRect(x, y, 0.4*m_block_size, 0.4*m_block_size, m_block_brush_debug);
-
+		 
 	}
+}
+vector<Obstacle> Level::createObstacles()
+{
+	float obstacle_width = Obstacle::grid[0].size() * 0.03f;
+	cout<< obstacle_width;
+	float gap = (m_state->getCanvasWidth() - (4 * obstacle_width)) / 5;
+
+	for (int i = 0; i < 4; i++) {
+		float offset_x = (i+1  ) * gap + i * obstacle_width;
+		float ob_y = m_state->getCanvasHeight()/2.0f+1.7f;
+		std::cout << offset_x << " " << ob_y << std::endl;
+		obstacles.emplace_back(offset_x, ob_y); // Construct in place
+		obstacles.back().init();            // Initialize the newly created obstacle
+	}
+	return obstacles;
 }
 //void explodeAlien(int alienIndex, std::vector<Box>& m_blocks, float explosionRadius) {
 //	Box& explodedAlien = m_blocks[alienIndex];
@@ -56,7 +75,7 @@ void Level::checkCollisions(float dt)
 		if (m_state->getPlayer()->intersect(box))
 			printf("*");
 	}*/
-	float offset = 0.0f;
+	
 	/*for (auto& box : m_blocks) {
 		if (offset = m_state->getPlayer()->intersectDown(box)) {
 			m_state->getPlayer()->m_pos_y += offset;
@@ -79,42 +98,92 @@ void Level::checkCollisions(float dt)
 
 	
 		for (auto& box : m_blocks) {
-			if (offset = m_state->getPlayer()->intersectUp(box)) {
+			
+		}
+		
+	}*/
+	
+	
+
+	for (auto* new_laser : m_laser_objects) {
+		Box box1 = Box(new_laser->get_m_pos_laser_x(), new_laser->get_m_pos_laser_y(), m_block_size, m_block_size);
+		for (int i = 0; i < m_blocks.size();) {
+			if (box1.intersect(m_blocks[i]) && new_laser->get_laser_direction() == 1.0f) {
+
+				new_laser->setActive(false);
+				explosionPiece piece1 = explosionPiece(m_blocks[i].m_pos_x - m_blocks[i].m_width / 2.0f, m_blocks[i].m_pos_y, m_blocks[i].m_height, m_blocks[i].m_width / 2.0f, "right");
+				explosion_pieces.push_back(piece1);
+				explosion_pieces_names.push_back(m_block_names[i] + "1");
+				cout << m_block_names[i] + "1";
+				explosionPiece piece2 = explosionPiece(m_blocks[i].m_pos_x + m_blocks[i].m_width / 2.0f, m_blocks[i].m_pos_y, m_blocks[i].m_height, m_blocks[i].m_width / 2.0f, "left");
+				explosion_pieces.push_back(piece2);
+				explosion_pieces_names.push_back(m_block_names[i] + "2");
+
+
+				m_blocks.erase(m_blocks.begin() + i);
+				m_block_names.erase(m_block_names.begin() + i);
+			}
+			else { i++; }
+
+			for (auto& obstacle : obstacles) {
+				for (int i = 0; i < obstacle.blocks.size();) {
+					if (box1.intersect(obstacle.blocks[i]) && abs(obstacle.blocks[i].m_pos_x - box1.m_pos_x) < 0.04f) { //second condition is for the laser to not hit two blocks at the same time
+
+						obstacle.blocks.erase(obstacle.blocks.begin() + i);
+						new_laser->setActive(false);
+						break;
+					}
+					else {
+						i++;
+					}
+				}
+			}
+		}
+		
+		
+				
+				//m_laser_objects.remove(laser);
+			
+		
+	}
+	float offset = 0.0f;
+	for (auto& obstacle : obstacles) {
+		for (int i = 0; i < obstacle.blocks.size(); i++) {
+			//cout << "player x=" << m_state->getPlayer()->m_pos_x << endl;
+			//cout << "box x=" << obstacle.blocks[i].m_pos_x << endl;
+			if (! m_state->getPlayer()->intersect(obstacle.blocks[i]))
+				continue;
+
+
+			if (offset = m_state->getPlayer()->intersectSideways(obstacle.blocks[i])) {
+				m_state->getPlayer()->m_pos_x += offset;
+				m_state->getPlayer()->m_vx = 0.0f;
+				break;
+
+
+			}
+			if (offset = m_state->getPlayer()->intersectDown(obstacle.blocks[i])) {
+				m_state->getPlayer()->m_pos_y += offset;
+
+				
+
+				m_state->getPlayer()->m_vy = 0.0f;
+
+				break;
+			}
+			if (offset = m_state->getPlayer()->intersectUp(obstacle.blocks[i])) {
 				m_state->getPlayer()->m_pos_y -= offset;
+
 
 				m_state->getPlayer()->m_vy = 0.0f;
 
 				break;
 			}
 		}
-		
-	}*/
-	
-	for (auto* new_laser : m_laser_objects) {
-		Box box1 = Box(new_laser->get_m_pos_laser_x(), new_laser->get_m_pos_laser_y(), m_block_size, m_block_size);
-		for (int i = 0; i < m_blocks.size();) {
-			if (box1.intersect(m_blocks[i])) {
-
-				new_laser->setActive(false);
-				explosionPiece piece1 = explosionPiece(m_blocks[i].m_pos_x - m_blocks[i].m_width / 2.0f, m_blocks[i].m_pos_y , m_blocks[i].m_height, m_blocks[i].m_width/2.0f,"right");
-				explosion_pieces.push_back(piece1);
-				explosion_pieces_names.push_back(m_block_names[i] + "1");
-				cout << m_block_names[i] + "1";
-				explosionPiece piece2 = explosionPiece(m_blocks[i].m_pos_x + m_blocks[i].m_width / 2.0f, m_blocks[i].m_pos_y , m_blocks[i].m_height, m_blocks[i].m_width / 2.0f,"left");
-				explosion_pieces.push_back(piece2);
-				explosion_pieces_names.push_back(m_block_names[i]+"2");
-
-
-				m_blocks.erase(m_blocks.begin() + i);
-				m_block_names.erase(m_block_names.begin()+i);
-			}
-			else { i++; }
-
-				
-				//m_laser_objects.remove(laser);
-			
-		}
 	}
+	
+
+	
 	/*for (int i = 0; i < m_blocks.size();) {
 		for (int j = 0; j < explosion_pieces.size(); j++) {
 			if (m_blocks[i].intersect( (Box&) explosion_pieces[i])) {
@@ -201,7 +270,36 @@ void Level::update(float dt)
 	}
 
 	for (auto& piece : explosion_pieces) {
+		//if (!(piece)->is_active()) {     //is_active xrhsimpoieitai klhronomika apo GameObject
+			 // Delete the laser
+		//	it = m_laser_objects.erase(it);  // Remove from list and update iterator
+		//}
 		piece.move_explosion_piece(dt);
+	}
+
+	static int frame_count = 0;
+	static float last_time = graphics::getGlobalTime() / 1000.0f;
+
+	frame_count++;
+	float current_time = graphics::getGlobalTime() / 1000.0f;
+	if (current_time - last_time >= 1.0f) {
+		std::cout << "FPS: " << frame_count << std::endl;
+		frame_count = 0;
+		last_time = current_time;
+	}
+	float current_time_alien = graphics::getGlobalTime() / 1000.0f;
+	static float last_time_alien = 0.0f;
+
+	if (current_time_alien - last_time_alien > alien_shoot_cooldown && !m_blocks.empty()) {
+		int randomIndex = rand() % m_blocks.size();
+		std::cout << "Alien " << randomIndex << " shooting at (" << m_blocks[randomIndex].m_pos_x << ", " << m_blocks[randomIndex].m_pos_y << ")\n";
+
+		Laser* new_laser = new Laser(m_blocks[randomIndex].m_pos_x, m_blocks[randomIndex].m_pos_y);
+		new_laser->init();
+		new_laser->setLaserDirection(true);
+		m_laser_objects.push_back(new_laser);
+
+		last_time_alien = current_time_alien;
 	}
 	GameObject::update(dt);
 }
@@ -243,8 +341,10 @@ void Level::init()
 				m_block_names.push_back("alien");
 			}
 		}
-		Spring spring(0.5f, 3.0f, 0.1f);  //creation of spring
-
+		/*Obstacle m_obstacle(3.0f, 4.0f);
+		m_obstacle.init();
+		obstacles.push_back(m_obstacle);*/
+		obstacles = createObstacles();
 
 
 	for (auto p_gob : m_static_objects)
@@ -284,6 +384,7 @@ void Level::draw()
 
 	for (int i = 0; i < m_blocks.size(); i++)
 	{
+
 		drawBlock(i);
 	}
 	for (int i = 0; i < explosion_pieces.size(); i++)
@@ -292,6 +393,9 @@ void Level::draw()
 		m_block_brush.outline_opacity = 0.0f;
 
 		graphics::drawRect(explosion_pieces[i].m_pos_x, explosion_pieces[i].m_pos_y, 0.15 * m_block_size, 0.3 * m_block_size, m_block_brush);
+	}
+	for (Obstacle ob : obstacles) {
+		ob.draw();
 	}
 }
 

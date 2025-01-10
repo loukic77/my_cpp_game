@@ -21,10 +21,10 @@ void Laser::draw()
 void Laser::update(float dt)
 {
 
-
+	float delta_time = dt / 1000.0f;
 	if (is_active()) {
-		m_pos_laser_y -= 0.07f;  // laser goes up
-		if (m_pos_laser_y  < 0.0f) {  // out of canvas bounds(top left corner is 0(0,0))
+		m_pos_laser_y -= delta_time*m_velocity_laser*laser_direction;  // laser goes up
+		if (m_pos_laser_y  < 0.0f || m_pos_laser_y>8.0) {  // out of canvas bounds(top left corner is 0(0,0))
 			m_active = false;  // laser gets deactivated
 		}
 	}
@@ -55,9 +55,13 @@ void Laser::init()
 
 
 
-Laser::Laser()
+void Laser::setLaserDirection(bool flag)
 {
+	laser_direction = (flag) ? -1 : 1;   //ternary op( if flag laser_direction=-1 and laser goes down) 
+
 }
+
+
 
 Laser::~Laser()
 {

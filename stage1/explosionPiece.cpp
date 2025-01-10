@@ -12,3 +12,9 @@ void explosionPiece::move_explosion_piece(float dt)
 	m_pos_y += m_gravity * delta_time;
 
 }
+
+void explosionPiece::update(float dt) {
+	if ( m_pos_y>8.0) {  // out of canvas bounds(top left corner is 0(0,0))
+		m_active = false;  // laser gets deactivated
+	}
+}

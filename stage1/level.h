@@ -7,6 +7,7 @@
 #include "laser.h"
 #include "timer.h"
 #include "explosionPiece.h"
+#include "Obstacle.h"
 #include <vector>
 #include <chrono>
 #include <thread>
@@ -29,13 +30,17 @@ class Level :public GameObject,public Box {
 	const float cooldown = 0.2f;
 	std::chrono::steady_clock::time_point lastShotTime = std::chrono::steady_clock::now();   //arxikopoiw xrono gia thn prwth bolh
 	std::list<Laser*> m_laser_objects;
-	float velocity_x = 0.002f;
+	float velocity_x = 0.003f;
 	float velocity_y = 0.09f;
 	std::vector<float> force;
 	std::vector<explosionPiece> explosion_pieces;
 	std::vector<std::string> explosion_pieces_names;
 	void drawBlock(int i);
+	std::vector<Obstacle> obstacles;
+	const float alien_shoot_cooldown = 0.8f;
+	
 
+	vector<Obstacle> createObstacles();
 	void checkCollisions(float dt);
 public:
 	void  update(float dt) override;

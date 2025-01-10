@@ -18,6 +18,9 @@ public:
 	const float m_gravity = 3.0f;
 	const float m_accel_vertical = 6.0f;
 	void move_explosion_piece(float dt);
+	void update(float dt);
 	explosionPiece(float x, float y, float w, float h,string part)
 		: m_pos_x(x), m_pos_y(y), m_width(w), m_height(h),m_part(part) {}
+
+	
 };

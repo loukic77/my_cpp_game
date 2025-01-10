@@ -34,7 +34,7 @@ void GameState::update(float dt)
 {
 	if (dt > 500) return;
 	
-	float sleep_time = std::max(0.0f,17.0f-dt);
+	float sleep_time = std::max(0.7f,17.0f-dt);
 
 	std::this_thread::sleep_for(std::chrono::duration<float, std::milli>(sleep_time));
 
