@@ -4,17 +4,25 @@
 #include <thread>
 #include <chrono>
 #include "laser.h"
+#include <iostream>
+#define SETCOLOR(c,r,g,b){c[0] =r,c[1]=g,c[2]= b;}
 
 GameState::GameState()
 {
 }
 
 void GameState::init() {
+	
+
+	
+
+	current_state = "menu";
 	m_current_level = new Level();
 	m_current_level->init();
 
 	m_player = new Player("Player");
 	m_player->init();
+	graphics::playMusic(getFullAssetPath("AuebInvaders.mp3"),0.37f,true);
 	graphics::preloadBitmaps(getAssetDir());
 	graphics::setFont(m_asset_path + "OpenSans-Bold.ttf");
 	
@@ -24,10 +32,27 @@ void GameState::init() {
 	
 
 void GameState::draw() {
-	if (!m_current_level) {
-		return;
+	if (current_state == "menu") {
+		
+		m_menu.texture = getFullAssetPath("menu3.png");
+		SETCOLOR(m_menu.fill_color, 1.0f, 1.0f, 1.0f);
+		graphics::drawRect(3, 3, 6, 6, m_menu);
+		SETCOLOR(menu_brush_option.fill_color, 1.0f, 1.0f, 1.0f);
+		menu_brush_option.fill_opacity = 1.0f;
+		graphics::drawText(0.8f, 2.0f, 0.3f, "WELCOME TO SPACE INVADERS", menu_brush_option);
+		graphics::drawText(1.6f, 3.0f, 0.3f, "Press ENTER to start", menu_brush_option);
+		graphics::drawText(1.8f, 4.0f, 0.3f, "Press ESC to quit", menu_brush_option);
+		graphics::drawText(1.8f, 5.0f, 0.3f, "Press P to pause", menu_brush_option);
 	}
-	m_current_level->draw();
+	else {
+
+		if (!m_current_level) {
+			return;
+		}
+
+		m_current_level->draw();
+	}
+	
 }
 
 void GameState::update(float dt)
@@ -38,12 +63,27 @@ void GameState::update(float dt)
 
 	std::this_thread::sleep_for(std::chrono::duration<float, std::milli>(sleep_time));
 
-	if (!m_current_level) {
-		return;
+	if (current_state == "menu") {
+		if (graphics::getKeyState(graphics::SCANCODE_RETURN)) {  // ENTER key
+			current_state = "playing";
+			
+		}
+		
 	}
-	m_current_level->update(dt);
+	if (current_state == "playing") {
 
-	m_debugging = graphics::getKeyState(graphics::SCANCODE_0);
+		if (!m_current_level) {
+			return;
+		}
+		if (graphics::getKeyState(graphics::SCANCODE_P)) {  // PAUSE(P) key
+			current_state = "menu";
+			return;
+		}
+		m_current_level->update(dt);
+
+		m_debugging = graphics::getKeyState(graphics::SCANCODE_0);
+	}
+	
 	
 }
 

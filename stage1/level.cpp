@@ -7,6 +7,7 @@
 #include "Spring.h"
 #include "explosionPiece.h"
 #include "Obstacle.h"
+#include "gamestate.h"
 
 #include <iostream>
 #include <chrono>
@@ -113,6 +114,7 @@ void Level::checkCollisions(float dt)
 				score += 1;
 				new_laser->setActive(false);
 				explosionPiece piece1 = explosionPiece(m_blocks[i].m_pos_x - m_blocks[i].m_width / 2.0f, m_blocks[i].m_pos_y, m_blocks[i].m_height, m_blocks[i].m_width / 2.0f, "right");
+				piece1.init();
 				explosion_pieces.push_back(piece1);
 				explosion_pieces_names.push_back(m_block_names[i] + "1");
 				cout << m_block_names[i] + "1";
@@ -120,9 +122,10 @@ void Level::checkCollisions(float dt)
 				explosion_pieces.push_back(piece2);
 				explosion_pieces_names.push_back(m_block_names[i] + "2");
 
-
+				graphics::playSound(m_state->getFullAssetPath("DeathExpl.mp3"),0.9f);
 				m_blocks.erase(m_blocks.begin() + i);
 				m_block_names.erase(m_block_names.begin() + i);
+				
 			}
 			else { i++; }
 		}
@@ -143,8 +146,9 @@ void Level::checkCollisions(float dt)
 			}
 		}
 		
-		if (new_laser->get_laser_direction() == -1 && m_state->getPlayer()->intersect(box1) && new_laser->is_active() && abs(m_state->getPlayer()->m_pos_x - box1.m_pos_x) < 0.08f && abs(m_state->getPlayer()->m_pos_y - box1.m_pos_y) < 0.04f) {      //checking if a laser hits the target(it has to not hit another box earlier too)
+		if (new_laser->get_laser_direction() == -1 && m_state->getPlayer()->intersect(box1) && new_laser->is_active() && abs(m_state->getPlayer()->m_pos_x - box1.m_pos_x) < 0.2f && abs(m_state->getPlayer()->m_pos_y - box1.m_pos_y) < 0.04f) {      //checking if a laser hits the target(it has to not hit another box earlier too)
 			m_state->getPlayer()->set_lifes_remaining(m_state->getPlayer()->get_lifes_remaining() - 1);
+			graphics::playSound(m_state->getFullAssetPath("HpLoss.mp3"),0.8f);
 			std::cout <<"lifes left: "<< m_state->getPlayer()->get_lifes_remaining() << endl;
 			new_laser->setActive(false);
 		}
@@ -238,6 +242,7 @@ void Level::update(float dt)
 			std::chrono::steady_clock::time_point lastShotTime = std::chrono::steady_clock::now();       //krataw sth mnhmh xrono gia epomenh bolh
 			Laser* new_laser = new Laser();
 			new_laser->init();
+			graphics::playSound(m_state->getFullAssetPath("Bullet.mp3"), 0.6f);
 		//	new_laser->setActive(true);
 			new_laser->draw();
 			m_laser_objects.push_back(new_laser);
@@ -323,6 +328,12 @@ void Level::update(float dt)
 
 		last_time_alien = current_time_alien;
 	}
+	
+	if (m_state->getPlayer()->get_lifes_remaining()==0 || score==55) {
+		//m_state->current_state = "menu";
+		m_state->init();
+	}
+
 	GameObject::update(dt);
 }
 
@@ -356,6 +367,16 @@ void Level::init()
 
 	SETCOLOR(m_block_brush_debug.fill_color, 0.2f, 1.0f, 0.1f);
 	SETCOLOR(m_block_brush_debug.outline_color, 0.3f, 1.0f, 0.2f);*/
+
+
+
+
+	m_expl_sprites.push_back(m_state->getFullAssetPath("explosion0.png"));
+	m_expl_sprites.push_back(m_state->getFullAssetPath("explosion1.png"));
+	m_expl_sprites.push_back(m_state->getFullAssetPath("explosion2.png"));
+	m_expl_sprites.push_back(m_state->getFullAssetPath("explosion3.png"));
+	m_expl_sprites.push_back(m_state->getFullAssetPath("explosion4.png"));
+	m_expl_sprites.push_back(m_state->getFullAssetPath("explosion5.png"));
 
 		for (float i = 0.5; i <= 5.5; i=i+0.5) {
 			for (float j = 0.5; j <= 2.5; j=j+0.5){
@@ -427,6 +448,9 @@ void Level::draw()
 	for (Obstacle ob : obstacles) {
 		ob.draw();
 	}
+
+
+
 }
 
 Level::Level(const std::string& name)

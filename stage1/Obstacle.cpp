@@ -25,6 +25,7 @@ void Obstacle::draw()
 
         SETCOLOR(m_brush_obstacle.fill_color, 1.0f, 0.965f, 0.008f);
         SETCOLOR(m_brush_obstacle.outline_color, 0.0f, 0.0f, 0.000f);
+       // m_brush_obstacle.outline_opacity = 0.0f;
         //graphics::drawRect(3.0f, 4.0f, 1, 1, m_brush_obstacle);
         graphics::drawRect(ob.m_pos_x, ob.m_pos_y, ob.m_width, ob.m_height, m_brush_obstacle);
     }
