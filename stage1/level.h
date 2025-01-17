@@ -8,6 +8,7 @@
 #include "timer.h"
 #include "explosionPiece.h"
 #include "Obstacle.h"
+#include "explosion.h"
 #include <vector>
 #include <chrono>
 #include <thread>
@@ -26,7 +27,7 @@ class Level :public GameObject,public Box {
     graphics::Brush m_block_brush;
 	graphics::Brush m_block_brush_debug;
 
-
+	
 	std::vector<GameObject*> m_static_objects;
 	std::list<GameObject*> m_dynamic_objects;
 	const float cooldown = 0.2f;
@@ -41,12 +42,11 @@ class Level :public GameObject,public Box {
 	std::vector<Obstacle> obstacles;
 	const float alien_shoot_cooldown = 0.8f;
 	int score;
-	vector<string> m_expl_sprites;
-
+	
+	std::vector<explosion> explosions;
 	vector<Obstacle> createObstacles();
 	void checkCollisions(float dt);
 public:
-	vector<string> get_expl_sprites() { return m_expl_sprites; };
 	void  update(float dt) override;
 	void  draw() override;
 	void  init() override;

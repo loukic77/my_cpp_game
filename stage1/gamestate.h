@@ -19,11 +19,15 @@ private:
 	static GameState* m_unique_instance;
 	GameState();
 	
+	
+
 	class Player* m_player = 0;
 	class Level* m_current_level = 0;
 	class Laser* m_laser = 0;
-
+	int selectedOption = 0; // Tracks the currently selected menu option
+	vector<string> menuOptions = { "PLAY", "CONTROLS", "QUIT" };
 public:
+	
 	string current_state;
 	float m_global_offset_x = 0.0;
 	float m_global_offset_y = 0.0;
@@ -47,5 +51,24 @@ public:
 	class Player* getPlayer() { return m_player; }
 	class Level* getLevel() { return m_current_level; }
 	class Laser* getLaser() { return m_laser; }
+
+	int getSelectedOption() {
+		return selectedOption;
+	}
+
+	// Setter for selectedOption
+	void setSelectedOption(int option) {
+		selectedOption = option;
+	}
+
+	// Getter for menuOptions
+	vector<string> getMenuOptions() {
+		return menuOptions;
+	}
+
+	// Setter for menuOptions (if needed)
+	void setMenuOptions(const vector<string>& options) {
+		menuOptions = options;
+	}
 
 };

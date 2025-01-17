@@ -113,11 +113,12 @@ void Level::checkCollisions(float dt)
 
 				score += 1;
 				new_laser->setActive(false);
+				explosions.push_back(explosion(m_blocks[i].m_pos_x, m_blocks[i].m_pos_y));
 				explosionPiece piece1 = explosionPiece(m_blocks[i].m_pos_x - m_blocks[i].m_width / 2.0f, m_blocks[i].m_pos_y, m_blocks[i].m_height, m_blocks[i].m_width / 2.0f, "right");
 				piece1.init();
 				explosion_pieces.push_back(piece1);
 				explosion_pieces_names.push_back(m_block_names[i] + "1");
-				cout << m_block_names[i] + "1";
+				
 				explosionPiece piece2 = explosionPiece(m_blocks[i].m_pos_x + m_blocks[i].m_width / 2.0f, m_blocks[i].m_pos_y, m_blocks[i].m_height, m_blocks[i].m_width / 2.0f, "left");
 				explosion_pieces.push_back(piece2);
 				explosion_pieces_names.push_back(m_block_names[i] + "2");
@@ -125,7 +126,7 @@ void Level::checkCollisions(float dt)
 				graphics::playSound(m_state->getFullAssetPath("DeathExpl.mp3"),0.9f);
 				m_blocks.erase(m_blocks.begin() + i);
 				m_block_names.erase(m_block_names.begin() + i);
-				
+				break;
 			}
 			else { i++; }
 		}
@@ -191,7 +192,13 @@ void Level::checkCollisions(float dt)
 			}
 		}
 	}
-	
+	for (int i = 0; i < m_blocks.size();i++) {
+		if (abs(m_blocks[i].m_pos_x - m_state->getPlayer()->m_pos_x) < 0.2f && abs(m_blocks[i].m_pos_y - m_state->getPlayer()->m_pos_y)<0.2f || m_blocks[i].m_pos_y>7.5f) {  //check if aliens hit spaceship
+			m_state->getPlayer()->set_lifes_remaining(m_state->getPlayer()->get_lifes_remaining() - 1);
+			graphics::playSound(m_state->getFullAssetPath("HpLoss.mp3"), 0.8f);
+			std::cout << "lifes left: " << m_state->getPlayer()->get_lifes_remaining() << endl;
+		}
+	}
 
 	
 	/*for (int i = 0; i < m_blocks.size();) {
@@ -203,6 +210,8 @@ void Level::checkCollisions(float dt)
 		}
 	}*/
 }
+
+
 
 void Level::update(float dt)
 {
@@ -262,6 +271,15 @@ void Level::update(float dt)
 		}
 		
 	}
+
+	explosions.erase(
+		std::remove_if(explosions.begin(), explosions.end(),
+			[](const explosion& e) { return !e.flag; }),
+		explosions.end());
+
+	
+
+
 	checkCollisions( dt);
 	bool reverseDirection = false;
 	for (const auto& block : m_blocks) {
@@ -300,7 +318,9 @@ void Level::update(float dt)
 	//	}
 	//	
 	//}
-		
+	for (explosion& exp : explosions) {
+		exp.update(dt);
+	}
 
 		
 
@@ -329,7 +349,7 @@ void Level::update(float dt)
 		last_time_alien = current_time_alien;
 	}
 	
-	if (m_state->getPlayer()->get_lifes_remaining()==0 || score==55) {
+	if (m_state->getPlayer()->get_lifes_remaining()<=0 || score==55) {
 		//m_state->current_state = "menu";
 		m_state->init();
 	}
@@ -368,20 +388,25 @@ void Level::init()
 	SETCOLOR(m_block_brush_debug.fill_color, 0.2f, 1.0f, 0.1f);
 	SETCOLOR(m_block_brush_debug.outline_color, 0.3f, 1.0f, 0.2f);*/
 
-
-
-
-	m_expl_sprites.push_back(m_state->getFullAssetPath("explosion0.png"));
-	m_expl_sprites.push_back(m_state->getFullAssetPath("explosion1.png"));
-	m_expl_sprites.push_back(m_state->getFullAssetPath("explosion2.png"));
-	m_expl_sprites.push_back(m_state->getFullAssetPath("explosion3.png"));
-	m_expl_sprites.push_back(m_state->getFullAssetPath("explosion4.png"));
-	m_expl_sprites.push_back(m_state->getFullAssetPath("explosion5.png"));
-
 		for (float i = 0.5; i <= 5.5; i=i+0.5) {
 			for (float j = 0.5; j <= 2.5; j=j+0.5){
 				m_blocks.push_back(Box(i * m_block_size, j * m_block_size, -0.7f,-0.7f));        //dinw arnhtiko height kai width.sto drawBlock ta megalwnw
-				m_block_names.push_back("alien");
+				if (j == 0.5f) {
+					m_block_names.push_back("B18");
+				}
+				else if (j == 1.0f) {
+					m_block_names.push_back("C16");
+				}
+				else if (j == 1.5f) {
+					m_block_names.push_back("F4");
+				}
+				else if (j == 2.0f) {
+					m_block_names.push_back("E2");
+				}
+				else if (j == 2.5f) {
+					m_block_names.push_back("G2");
+					//m_block_names.push_back("alien");
+				}
 			}
 		}
 		/*Obstacle m_obstacle(3.0f, 4.0f);
@@ -412,6 +437,8 @@ void Level::draw()
 	float j = 5.75;
 	for (int i = 0; i <	m_state->getPlayer()->get_lifes_remaining(); i++) {
 		graphics::drawRect(j, 0.3f,0.3f, 0.3f, m_brush_heart);
+		
+		
 		j = j-0.29f;
 	}
 	string score_text = "Score = " + std::to_string(score);
@@ -426,6 +453,7 @@ void Level::draw()
 			new_laser->draw();
 	}
 
+	
 	
 
 	for (auto p_gob : m_static_objects)
@@ -448,15 +476,18 @@ void Level::draw()
 	for (Obstacle ob : obstacles) {
 		ob.draw();
 	}
+	for (explosion exp : explosions) {
+		exp.draw();
+	}
 
-
+	
 
 }
 
 Level::Level(const std::string& name)
 {
 	m_brush_background.outline_opacity = 0.0f;
-	m_brush_background.texture = m_state->getFullAssetPath("1349325.png");
+	m_brush_background.texture = m_state->getFullAssetPath("background4.png");
 
 	m_brush_heart.outline_opacity = 0.0f;
 	m_brush_heart.texture = m_state->getFullAssetPath("heart.png");
