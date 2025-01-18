@@ -4,7 +4,6 @@
 #include "sgg/graphics.h"
 #include "gamestate.h"
 #include "player.h"
-#include "timer.h"
 
 class Obstacle :public GameObject, public Box {
 	float pos_x, pos_y;

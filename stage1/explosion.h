@@ -5,7 +5,6 @@
 #include <vector>
 #include "player.h"
 #include "laser.h"
-#include "timer.h"
 #include "explosionPiece.h"
 #include "Obstacle.h"
 #include <vector>

@@ -134,7 +134,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Alien.cpp" />
     <ClCompile Include="explosion.cpp" />
     <ClCompile Include="explosionPiece.cpp" />
     <ClCompile Include="gameobject.cpp" />
@@ -144,10 +143,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="player.cpp" />
-    <ClCompile Include="timer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Alien.h" />
     <ClInclude Include="box.h" />
     <ClInclude Include="explosion.h" />
     <ClInclude Include="explosionPiece.h" />
@@ -157,8 +154,6 @@
     <ClInclude Include="level.h" />
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="player.h" />
-    <ClInclude Include="Spring.h" />
-    <ClInclude Include="timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

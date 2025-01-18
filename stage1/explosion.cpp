@@ -6,7 +6,6 @@
 #include <vector>
 #include "player.h"
 #include "laser.h"
-#include "timer.h"
 #include "explosionPiece.h"
 #include "Obstacle.h"
 #include <vector>
@@ -40,7 +39,7 @@ void explosion::update(float dt)
 	
 	}
 	else {
-		cout << "finally";
+		//cout << "finally";
 		flag = false;
 	}
 }

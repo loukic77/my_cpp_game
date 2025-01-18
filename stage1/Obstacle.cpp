@@ -4,7 +4,7 @@
 #include "sgg/graphics.h"
 #include "gamestate.h"
 #include "player.h"
-#include "timer.h"
+
 #include <iostream>
 #define SETCOLOR(c,r,g,b){c[0] =r,c[1]=g,c[2]= b;}
 

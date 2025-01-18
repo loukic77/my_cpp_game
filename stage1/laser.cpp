@@ -4,7 +4,6 @@
 #include "player.h"
 #include "sgg/graphics.h"
 #include <iostream>
-#include "timer.h"
 
 #define SETCOLOR(c,r,g,b){c[0] =r,c[1]=g,c[2]= b;}
 
@@ -42,15 +41,7 @@ void Laser::init()
 	
 } 
 
-//void Laser::setActive(bool m_active) {
-//	float m_collision_time = graphics::getGlobalTime() / 1000.0f;
-//	if (m_collision_time >= 0.0f) {
-//		float elapsed = (graphics::getGlobalTime() / 1000.0f) - m_collision_time;
-//		if (elapsed > 0.1f) { // Show laser for 0.1 seconds after collision
-//			m_active = false;
-//		}
-//	}
-//}
+
 
 
 

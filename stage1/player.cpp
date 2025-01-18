@@ -57,20 +57,7 @@ void Player::update(float dt)
 	
 	const float velocity = 5.0f;
 	
-	//if (graphics::getKeyState(graphics::SCANCODE_A)) {
-	//	m_pos_x -= velocity * delta_time;
-	//}
-	//if (graphics::getKeyState(graphics::SCANCODE_D)) {
-	//	m_pos_x += velocity * delta_time;
-	//}
-	//if (graphics::getKeyState(graphics::SCANCODE_S)) {
-	//	m_pos_y += velocity * delta_time;
-	//}
-	//if (graphics::getKeyState(graphics::SCANCODE_W)) {
-	//	m_pos_y -= velocity * delta_time;
-	//}
-	//
-
+	
 	movePlayer(dt);
 	m_state -> m_global_offset_x = m_state->getCanvasWidth() / 2.0f - m_pos_x;
 	m_state->m_global_offset_y = m_state->getCanvasHeight() / 2.0f - m_pos_y;
@@ -83,7 +70,6 @@ void Player::init()
 {
 	m_pos_x = m_state->getCanvasWidth() / 2.0f;
 	m_pos_y = 7.0f;
-	//m_width = m_width / 2.0f;
 	m_width = m_width / 2.4f;
 
 	m_height = m_height / 2.0f;

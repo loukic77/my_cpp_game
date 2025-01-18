@@ -4,7 +4,6 @@
 #include "sgg/graphics.h"
 #include "gamestate.h"
 #include "player.h"
-#include "timer.h"
 
 struct explosionPiece : public Box, public GameObject {
 private:

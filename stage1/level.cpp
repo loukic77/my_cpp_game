@@ -3,8 +3,6 @@
 #include "player.h"
 #include "laser.h"
 #include <list>
-#include "timer.h"
-#include "Spring.h"
 #include "explosionPiece.h"
 #include "Obstacle.h"
 #include "gamestate.h"
@@ -35,76 +33,21 @@ void Level::drawBlock(int i)
 vector<Obstacle> Level::createObstacles()
 {
 	float obstacle_width = Obstacle::grid[0].size() * 0.03f;
-	cout<< obstacle_width;
+	//cout<< obstacle_width;
 	float gap = (m_state->getCanvasWidth() - (4 * obstacle_width)) / 5;
 
 	for (int i = 0; i < 4; i++) {
 		float offset_x = (i+1  ) * gap + i * obstacle_width;
 		float ob_y = m_state->getCanvasHeight()/2.0f+1.7f;
-		std::cout << offset_x << " " << ob_y << std::endl;
-		obstacles.emplace_back(offset_x, ob_y); // Construct in place
-		obstacles.back().init();            // Initialize the newly created obstacle
+		//std::cout << offset_x << " " << ob_y << std::endl;
+		obstacles.emplace_back(offset_x, ob_y); 
+		obstacles.back().init();            
 	}
 	return obstacles;
 }
-//void explodeAlien(int alienIndex, std::vector<Box>& m_blocks, float explosionRadius) {
-//	Box& explodedAlien = m_blocks[alienIndex];
-//
-//	for (int i = 0; i < m_blocks.size(); ++i) {
-//		if (i == alienIndex) continue; // Skip the alien being destroyed
-//
-//		Box& otherAlien = m_blocks[i];
-//
-//		// Calculate distance between exploded alien and this alien
-//		float delta_x = otherAlien.m_pos_x - explodedAlien.m_pos_x;
-//		float delta_y = otherAlien.m_pos_y - explodedAlien.m_pos_y;
-//		float distance = std::sqrt(delta_x * delta_x + delta_y * delta_y);
-//
-//		// If within explosion radius, apply a force
-//		if (distance < explosionRadius && distance > 0.0f) {
-//			float force = (explosionRadius - distance) * 10.0f; // Scale force with distance
-//			float dir_x = delta_x / distance;
-//			float dir_y = delta_y / distance;
-//
-//			otherAlien.m_pos_x +=
-//		}
-//	}
-//}
+
 void Level::checkCollisions(float dt)
 {
-	/*for (auto& box : m_blocks) {
-		if (m_state->getPlayer()->intersect(box))
-			printf("*");
-	}*/
-	
-	/*for (auto& box : m_blocks) {
-		if (offset = m_state->getPlayer()->intersectDown(box)) {
-			m_state->getPlayer()->m_pos_y += offset;
-
-			if (m_state->getPlayer()->m_vy > 1.0f)
-				graphics::playSound(m_state->getFullAssetPath("metal2.wav"), 0.5f);
-
-			m_state->getPlayer()->m_vy = 0.0f;
-
-			break;
-		}
-		for (auto& box : m_blocks) {
-			if (offset = m_state->getPlayer()->intersectSideways(box)) {
-				m_state->getPlayer()->m_pos_x += offset;
-				m_state->getPlayer()->m_vx = 0.0f;
-
-				break;
-			}
-		}
-
-	
-		for (auto& box : m_blocks) {
-			
-		}
-		
-	}*/
-	
-	
 
 	for (auto* new_laser : m_laser_objects) {
 		Box box1 = Box(new_laser->get_m_pos_laser_x(), new_laser->get_m_pos_laser_y(), m_block_size, m_block_size);
@@ -123,7 +66,7 @@ void Level::checkCollisions(float dt)
 				explosion_pieces.push_back(piece2);
 				explosion_pieces_names.push_back(m_block_names[i] + "2");
 
-				graphics::playSound(m_state->getFullAssetPath("DeathExpl.mp3"),0.9f);
+				graphics::playSound(m_state->getFullAssetPath("DeathExpl.mp3"),1.0f);
 				m_blocks.erase(m_blocks.begin() + i);
 				m_block_names.erase(m_block_names.begin() + i);
 				break;
@@ -150,7 +93,7 @@ void Level::checkCollisions(float dt)
 		if (new_laser->get_laser_direction() == -1 && m_state->getPlayer()->intersect(box1) && new_laser->is_active() && abs(m_state->getPlayer()->m_pos_x - box1.m_pos_x) < 0.2f && abs(m_state->getPlayer()->m_pos_y - box1.m_pos_y) < 0.04f) {      //checking if a laser hits the target(it has to not hit another box earlier too)
 			m_state->getPlayer()->set_lifes_remaining(m_state->getPlayer()->get_lifes_remaining() - 1);
 			graphics::playSound(m_state->getFullAssetPath("HpLoss.mp3"),0.8f);
-			std::cout <<"lifes left: "<< m_state->getPlayer()->get_lifes_remaining() << endl;
+			//std::cout <<"lifes left: "<< m_state->getPlayer()->get_lifes_remaining() << endl;
 			new_laser->setActive(false);
 		}
 				//m_laser_objects.remove(laser);
@@ -196,19 +139,12 @@ void Level::checkCollisions(float dt)
 		if (abs(m_blocks[i].m_pos_x - m_state->getPlayer()->m_pos_x) < 0.2f && abs(m_blocks[i].m_pos_y - m_state->getPlayer()->m_pos_y)<0.2f || m_blocks[i].m_pos_y>7.5f) {  //check if aliens hit spaceship
 			m_state->getPlayer()->set_lifes_remaining(m_state->getPlayer()->get_lifes_remaining() - 1);
 			graphics::playSound(m_state->getFullAssetPath("HpLoss.mp3"), 0.8f);
-			std::cout << "lifes left: " << m_state->getPlayer()->get_lifes_remaining() << endl;
+			//std::cout << "lifes left: " << m_state->getPlayer()->get_lifes_remaining() << endl;
 		}
 	}
 
 	
-	/*for (int i = 0; i < m_blocks.size();) {
-		for (int j = 0; j < explosion_pieces.size(); j++) {
-			if (m_blocks[i].intersect( (Box&) explosion_pieces[i])) {
-				explosion_pieces[i].velocity_x -= 0.1f;
-				explosion_pieces[i].velocity_y -= 0.1f;
-			}
-		}
-	}*/
+	
 }
 
 
@@ -218,24 +154,7 @@ void Level::update(float dt)
 	if (m_state->getPlayer()->is_active()) {
 		m_state->getPlayer()->update(dt);
 	}
-	//m_pos_x = std::max(0.0f, std::min(m_pos_x, m_state->getCanvasWidth()));
-	//m_pos_y = std::max(0.0f, std::min(m_pos_y, m_state->getCanvasHeight()));
-	//checkCollisions();
-	//if (m_state->getLaser()->is_active()) {
-	//	m_state->getLaser()->update(dt);
-	//}
-	//std::cout << m_timer->isRunning();
-	//std::cout << m_timer->m_val;
-	//if (m_timer->isRunning()) {
-	//	can_shoot = false;
-	//}
-	///*if (m_timer->m_val == 0.5f) {
-	//	m_timer->stop();
-	//}*/
-	/*std::cout << m_timer;
-	if (!m_timer) {
-		std::cout << "Error: m_timer is null!" << std::endl;
-	}*/
+	
 	
 	
 
@@ -324,7 +243,7 @@ void Level::update(float dt)
 
 		
 
-	static int frame_count = 0;
+	/*static int frame_count = 0;
 	static float last_time = graphics::getGlobalTime() / 1000.0f;
 
 	frame_count++;
@@ -333,13 +252,13 @@ void Level::update(float dt)
 		std::cout << "FPS: " << frame_count << std::endl;
 		frame_count = 0;
 		last_time = current_time;
-	}
+	}*/
 	float current_time_alien = graphics::getGlobalTime() / 1000.0f;
 	static float last_time_alien = 0.0f;
 
 	if (current_time_alien - last_time_alien > alien_shoot_cooldown && !m_blocks.empty()) {
 		int randomIndex = rand() % m_blocks.size();
-		std::cout << "Alien " << randomIndex << " shooting at (" << m_blocks[randomIndex].m_pos_x << ", " << m_blocks[randomIndex].m_pos_y << ")\n";
+		//std::cout << "Alien " << randomIndex << " shooting at (" << m_blocks[randomIndex].m_pos_x << ", " << m_blocks[randomIndex].m_pos_y << ")\n";
 
 		Laser* new_laser = new Laser(m_blocks[randomIndex].m_pos_x, m_blocks[randomIndex].m_pos_y);
 		new_laser->init();
@@ -349,8 +268,13 @@ void Level::update(float dt)
 		last_time_alien = current_time_alien;
 	}
 	
-	if (m_state->getPlayer()->get_lifes_remaining()<=0 || score==55) {
+	if (m_state->getPlayer()->get_lifes_remaining()<=0) {
 		//m_state->current_state = "menu";
+		graphics::playSound(m_state->getFullAssetPath("BigPhatL.mp3"),1.0f);
+		m_state->init();
+	}
+	else if (score == 55) {
+		graphics::playSound(m_state->getFullAssetPath("LoudBigW.mp3"), 0.8f);
 		m_state->init();
 	}
 
@@ -362,37 +286,12 @@ void Level::update(float dt)
 void Level::init()
 {
 	
-	/*m_blocks.push_back(Box(5* m_block_size, 6* m_block_size, m_block_size, m_block_size));
-	m_blocks.push_back(Box(4 * m_block_size, 6 * m_block_size, m_block_size, m_block_size));
-	m_blocks.push_back(Box(3 * m_block_size, 6 * m_block_size, m_block_size, m_block_size));
-	m_blocks.push_back(Box(2 * m_block_size, 5 * m_block_size, m_block_size, m_block_size));
-	m_blocks.push_back(Box(6 * m_block_size, 6 * m_block_size, m_block_size, m_block_size));
-	m_blocks.push_back(Box(7 * m_block_size, 6 * m_block_size, m_block_size, m_block_size));
-	m_blocks.push_back(Box(7 * m_block_size, 5 * m_block_size, m_block_size, m_block_size));
-	m_blocks.push_back(Box(3 * m_block_size, 2 * m_block_size, m_block_size, m_block_size));
-	m_blocks.push_back(Box(4 * m_block_size, 3 * m_block_size, m_block_size, m_block_size));
-
-	m_block_names.push_back("block8.png");
-	m_block_names.push_back("block1.png");
-	m_block_names.push_back("block7.png");
-	m_block_names.push_back("block6.png");
-	m_block_names.push_back("block10.png");
-	m_block_names.push_back("block1.png");
-	m_block_names.push_back("block2.png");
-	m_block_names.push_back("block8.png");
-	m_block_names.push_back("block3.png");
-
-	m_block_brush.outline_opacity = 0.0f;
-	m_block_brush_debug.fill_opacity = 0.1f;
-
-	SETCOLOR(m_block_brush_debug.fill_color, 0.2f, 1.0f, 0.1f);
-	SETCOLOR(m_block_brush_debug.outline_color, 0.3f, 1.0f, 0.2f);*/
 
 		for (float i = 0.5; i <= 5.5; i=i+0.5) {
 			for (float j = 0.5; j <= 2.5; j=j+0.5){
 				m_blocks.push_back(Box(i * m_block_size, j * m_block_size, -0.7f,-0.7f));        //dinw arnhtiko height kai width.sto drawBlock ta megalwnw
 				if (j == 0.5f) {
-					m_block_names.push_back("B18");
+					m_block_names.push_back("B18");				//each name represents different alien sprite
 				}
 				else if (j == 1.0f) {
 					m_block_names.push_back("C16");
@@ -405,13 +304,11 @@ void Level::init()
 				}
 				else if (j == 2.5f) {
 					m_block_names.push_back("G2");
-					//m_block_names.push_back("alien");
+					
 				}
 			}
 		}
-		/*Obstacle m_obstacle(3.0f, 4.0f);
-		m_obstacle.init();
-		obstacles.push_back(m_obstacle);*/
+		
 		obstacles = createObstacles();
 
 
