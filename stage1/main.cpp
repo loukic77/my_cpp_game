@@ -32,7 +32,7 @@ void update(float dt) {
 
 int main() {
 
-	graphics::createWindow(800,800, "pong stage1");
+	graphics::createWindow(800,800,"Space Invaders");
 	init();
 
 	graphics::setDrawFunction(draw);

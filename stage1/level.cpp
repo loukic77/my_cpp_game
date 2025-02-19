@@ -271,10 +271,14 @@ void Level::update(float dt)
 	if (m_state->getPlayer()->get_lifes_remaining()<=0) {
 		//m_state->current_state = "menu";
 		graphics::playSound(m_state->getFullAssetPath("BigPhatL.mp3"),1.0f);
+		std::this_thread::sleep_for(std::chrono::seconds(1));  // Short delay before restarting
+		//m_state->reset();
 		m_state->init();
 	}
 	else if (score == 55) {
 		graphics::playSound(m_state->getFullAssetPath("LoudBigW.mp3"), 0.8f);
+		std::this_thread::sleep_for(std::chrono::seconds(1));  // Short delay before restarting
+		//reset();
 		m_state->init();
 	}
 

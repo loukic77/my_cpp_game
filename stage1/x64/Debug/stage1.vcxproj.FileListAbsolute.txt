@@ -1,1 +1,2 @@
 C:\Users\louki\OneDrive\Υπολογιστής\game\stage1\stage1\x64\Debug\stage1.exe
+C:\Users\louki\OneDrive\Υπολογιστής\UNI\3rd SEMESTER\c++\game\stage1\stage1\x64\Debug\stage1.exe

@@ -14,12 +14,19 @@ GameState::GameState()
 void GameState::init() {
 	
 
-	
+	if (m_current_level) {
+		delete m_current_level;
+		m_current_level = nullptr;
+	}
+	if (m_player) {
+		delete m_player;
+		m_player = nullptr;
+	}
 
 	current_state = "menu";
 	m_current_level = new Level();
 	m_current_level->init();
-
+	
 	m_player = new Player("Player");
 	m_player->init();
 	graphics::playMusic(getFullAssetPath("AuebInvaders.mp3"),0.29f,true);
